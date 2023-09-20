@@ -1,6 +1,7 @@
 import SideBar from "@/components/SideBar";
-import SupabaseProvider from "@/providers/SupabaseProvider";
 import { Figtree } from "next/font/google";
+import SupabaseProvider from "@/providers/SupabaseProvider";
+import ModalProvider from "@/providers/ModalProvider";
 import { UserProvider } from "@/providers/UserProvider";
 import "./globals.css";
 
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body className={font.className}>
         <SupabaseProvider>
           <UserProvider>
+            <ModalProvider />
             <SideBar>{children}</SideBar>
           </UserProvider>
         </SupabaseProvider>
